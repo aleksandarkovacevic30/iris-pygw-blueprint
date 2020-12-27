@@ -1,0 +1,24 @@
+version: '3.6'
+services:
+    iris:
+        build: iris/.
+        image: irispgw:latest
+        restart: always
+        hostname: 'iris'
+        cpuset: "0"
+        init: true
+        expose:
+            - '1972'
+            - '52773'
+        ports:
+            - '9091:1972'
+            - '9092:52773'
+    python:
+        build: ./python
+        image: pgw:latest
+        privileged: true
+        hostname: 'pogs'
+        ports:
+            - '57575:57575'
+        expose:
+            - '57575'            
