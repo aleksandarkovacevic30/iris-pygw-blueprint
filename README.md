@@ -16,12 +16,12 @@ This blueprint is contains two containers:
 
 - Start the containers:
 
-    docker-compose up -d
-    docker exec -it iris-pygw-blueprint_iris_1 iris session IRIS
+    `docker-compose up -d`
+    `docker exec -it iris-pygw-blueprint_iris_1 iris session IRIS`
 
 - run the following code to test it
 
-    zn "PYTHON"
-    set st = ##class(abc.python).connectToGateway("pogs",.GW)
-    set person = ##class(%Net.Remote.Object).%New(GW,"PersonDemo.Person")
-    write !,"Default values: ",person.displayPerson()
+    `zn "PYTHON"`
+    `set st = ##class(abc.python).connectToGateway("pogs",.GW)`
+    `set person = ##class(%Net.Remote.Object).%New(GW,"PersonDemo.Person")`
+    `write !,"Default values: ",person.displayPerson()`
