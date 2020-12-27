@@ -22,6 +22,9 @@ This blueprint is contains two containers:
 - run the following code to test it
 
     `zn "PYTHON"`
+
     `set st = ##class(abc.python).connectToGateway("pogs",.GW)`
+
     `set person = ##class(%Net.Remote.Object).%New(GW,"PersonDemo.Person")`
+    
     `write !,"Default values: ",person.displayPerson()`
